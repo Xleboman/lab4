@@ -1,23 +1,4 @@
-/* style.css - Полный стиль для сайта о Тетрисе */
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* ---------- Глобальные переменные ---------- */
-:root {
-    --bg-dark: #0a0c14;
-    --bg-card: #11141f;
-    --bg-elevated: #1a1f2e;
-    --primary: #3b82f6;
-    --primary-glow: #3b82f6cc;
-    --primary-dark: #2563eb;
-    --accent: #facc15;
-    --accent-dark: #eab308;
-    --text-light: #f3f4f6;
-    --text-muted: #9ca3af;
-    --border-dim: #1f2937;
-    --success: #10b981;
-    --danger: #ef4444;
-    --transition: all 0.2s ease;
-}
+/* style.css — стили для форума о Тетрисе */
 
 * {
     margin: 0;
@@ -26,98 +7,34 @@
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--bg-dark);
-    color: var(--text-light);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
     line-height: 1.5;
-    scroll-behavior: smooth;
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
-/* ---------- Типографика и базовые элементы ---------- */
-h1, h2, h3 {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-}
-
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    h2 {
-        font-size: 1.8rem;
-    }
-    .container {
-        padding: 0 20px;
-    }
-}
-
-.section {
-    padding: 80px 0;
-    border-bottom: 1px solid var(--border-dim);
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 48px;
-}
-
-.section-tag {
-    display: inline-block;
-    background: rgba(59, 130, 246, 0.15);
-    color: var(--primary);
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 12px;
-    border-radius: 40px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.dark-tag {
-    background: rgba(250, 204, 21, 0.15);
-    color: var(--accent);
-    border-color: rgba(250, 204, 21, 0.4);
-}
-
-.divider {
-    width: 70px;
-    height: 3px;
-    background: var(--primary);
-    margin: 20px auto 0;
-    border-radius: 4px;
-}
-
-.light-divider {
-    background: var(--accent);
-}
-
-/* ---------- Шапка сайта ---------- */
-.main-header {
+/* Шапка */
+.forum-header {
+    background: #010409;
+    border-bottom: 1px solid #30363d;
     position: sticky;
     top: 0;
-    background: rgba(10, 12, 20, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-dim);
     z-index: 100;
-    padding: 16px 0;
 }
 
-.header-flex {
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 0;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 15px;
 }
 
 .logo {
@@ -127,373 +44,324 @@ h2 {
 }
 
 .logo-icon {
-    font-size: 2rem;
-    filter: drop-shadow(0 0 6px var(--primary-glow));
+    font-size: 28px;
 }
 
-.logo-text {
-    font-size: 1.7rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #fff, #60a5fa);
+.logo-title {
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #3b82f6);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-.logo-text .highlight {
-    color: var(--accent);
+.logo-accent {
+    color: #facc15;
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
 }
 
-.nav-links {
-    display: flex;
-    gap: 28px;
-}
-
-.nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-    text-shadow: 0 0 4px var(--primary-glow);
-}
-
-/* ---------- Hero секция ---------- */
-.hero {
-    padding: 80px 0 60px;
-    background: radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.08), transparent);
-}
-
-.hero-content {
+.user-status {
+    font-size: 14px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 8px;
+    background: #161b22;
+    padding: 6px 14px;
+    border-radius: 20px;
 }
 
-.hero-text {
-    flex: 1;
-    min-width: 260px;
-}
-
-.hero-badge {
-    background: rgba(250, 204, 21, 0.2);
-    padding: 5px 14px;
-    border-radius: 40px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--accent);
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background: #2ea043;
+    border-radius: 50%;
     display: inline-block;
-    margin-bottom: 20px;
-    backdrop-filter: blur(2px);
 }
 
-.hero-text h2 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    color: var(--text-muted);
-    margin-bottom: 32px;
-    font-size: 1.1rem;
-    max-width: 540px;
-}
-
-.btn-primary {
-    display: inline-block;
-    background: linear-gradient(105deg, var(--primary), var(--primary-dark));
-    padding: 12px 28px;
-    border-radius: 40px;
-    font-weight: 600;
-    color: white;
+.login-link, .register-link {
+    color: #58a6ff;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 20px rgba(59,130,246,0.3);
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 26px rgba(59,130,246,0.5);
+.login-link:hover, .register-link:hover {
+    text-decoration: underline;
 }
 
-.hero-preview {
-    flex: 0.8;
+.sep {
+    color: #30363d;
+}
+
+/* Навигация */
+.forum-nav {
     display: flex;
-    justify-content: center;
-}
-
-.tetris-mini-grid {
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 20px;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(10, 28px);
-    grid-template-rows: repeat(10, 28px);
-    gap: 2px;
-    background-color: #0f1220;
-    box-shadow: 0 20px 35px -10px black;
-    border: 1px solid rgba(59,130,246,0.3);
-}
-
-/* динамические ячейки для мини-тетриса создаются через JS, зададим базовые стили */
-.tetris-mini-grid div {
-    background-color: #1e243b;
-    border-radius: 4px;
-    transition: background 0.1s;
-}
-
-/* ---------- О игре карточки ---------- */
-.about-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    justify-content: center;
-}
-
-.about-card {
-    background: var(--bg-card);
-    border-radius: 28px;
-    padding: 32px 24px;
-    flex: 1;
-    min-width: 240px;
-    text-align: center;
-    border: 1px solid var(--border-dim);
-    transition: var(--transition);
-}
-
-.about-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
-}
-
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.about-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.about-card p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-/* ---------- История (таймлайн) ---------- */
-.history-section {
-    background: linear-gradient(145deg, #0b0f18, #070a10);
-}
-
-.history-timeline {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.timeline-item {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 48px;
-    background: var(--bg-elevated);
-    border-radius: 24px;
-    padding: 20px 28px;
-    border-left: 6px solid var(--accent);
-    transition: all 0.2s;
-}
-
-.timeline-year {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: 1.8rem;
-    min-width: 110px;
-    color: var(--accent);
-    line-height: 1.2;
-}
-
-.timeline-content h3 {
-    margin-bottom: 8px;
-    font-size: 1.35rem;
-}
-
-.timeline-content p {
-    color: var(--text-muted);
-}
-
-/* ---------- Галерея фигур (тетрамино) ---------- */
-.figures-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 28px;
-    margin-top: 24px;
-}
-
-.figure-card {
-    background: var(--bg-elevated);
-    border-radius: 32px;
-    padding: 24px 20px 20px;
-    width: 140px;
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid #252e3f;
-}
-
-.figure-card:hover {
-    transform: scale(1.03);
-    border-color: var(--primary);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-}
-
-.figure-shape {
-    font-family: monospace;
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 8px;
-    background: #0a0e17;
+    gap: 8px;
     padding: 12px 0;
-    border-radius: 20px;
-    margin-bottom: 12px;
-    color: var(--accent);
+    flex-wrap: wrap;
+    border-top: 1px solid #21262d;
 }
 
-.figure-name {
-    font-weight: 700;
-    font-size: 1.2rem;
+.forum-nav a {
+    color: #8b949e;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
-.figure-desc {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 6px;
+.forum-nav a:hover {
+    background: #21262d;
+    color: #e6edf3;
 }
 
-/* ---------- Факты слайдер ---------- */
-.facts-section {
-    background: #0b0e18;
+.forum-nav a.active {
+    background: #1f6feb;
+    color: white;
 }
 
-.facts-slider {
-    background: var(--bg-card);
-    border-radius: 40px;
-    padding: 48px 32px;
-    max-width: 850px;
-    margin: 0 auto 30px;
-    text-align: center;
-    border: 1px solid var(--border-dim);
-    min-height: 280px;
+/* Статистика */
+.stats-bar {
+    background: #161b22;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 13px;
+    color: #8b949e;
+    border: 1px solid #30363d;
+}
+
+/* Категории */
+.categories {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
 }
 
-.fact-text {
-    font-size: 1.45rem;
-    font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    color: #e2e8f0;
+.category {
+    background: #161b22;
+    border-radius: 16px;
+    border: 1px solid #30363d;
+    overflow: hidden;
 }
 
-.fact-source {
-    font-size: 0.85rem;
-    color: var(--primary);
-    letter-spacing: 0.5px;
-}
-
-.fact-controls {
+.category-header {
+    background: #21262d;
+    padding: 14px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 32px;
-    margin-top: 10px;
+    border-bottom: 1px solid #30363d;
 }
 
-.fact-btn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 8px 20px;
-    border-radius: 60px;
+.category-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.topic-count {
+    font-size: 12px;
+    color: #8b949e;
+    background: #0d1117;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+/* Список тем */
+.topic-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #21262d;
+    transition: background 0.2s;
+}
+
+.topic:hover {
+    background: #1a1f2a;
+}
+
+.topic-icon {
+    font-size: 20px;
+    width: 40px;
+}
+
+.topic-info {
+    flex: 1;
+}
+
+.topic-title {
+    color: #58a6ff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.topic-title:hover {
+    text-decoration: underline;
+}
+
+.topic-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #8b949e;
+}
+
+.topic-last {
+    font-size: 12px;
+    color: #8b949e;
+    min-width: 120px;
+    text-align: right;
+}
+
+/* Кнопка создания темы */
+.new-topic-btn {
+    text-align: right;
+    margin: 24px 0 32px;
+}
+
+.create-topic {
+    background: #238636;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.2s;
-    font-family: inherit;
 }
 
-.fact-btn:hover {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 0 12px var(--primary-glow);
+.create-topic:hover {
+    background: #2ea043;
+    transform: translateY(-1px);
 }
 
-.fact-counter {
-    font-family: monospace;
-    background: #1a1f2e;
-    padding: 6px 16px;
-    border-radius: 60px;
-    font-weight: 500;
+/* Онлайн пользователи */
+.online-users {
+    background: #161b22;
+    border-radius: 16px;
+    border: 1px solid #30363d;
+    padding: 20px;
+    margin-bottom: 32px;
 }
 
-/* ---------- Футер ---------- */
-.main-footer {
-    padding: 40px 0 30px;
-    border-top: 1px solid var(--border-dim);
+.online-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.online-icon {
+    font-size: 14px;
+}
+
+.online-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.users-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.user {
+    background: #21262d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #c9d1d9;
+}
+
+.guest-count {
+    font-size: 13px;
+    color: #8b949e;
+    padding-top: 8px;
+    border-top: 1px solid #21262d;
+}
+
+/* Подвал */
+.forum-footer {
+    background: #010409;
+    border-top: 1px solid #30363d;
+    padding: 32px 0 24px;
+    margin-top: 16px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-links a:hover {
+    color: #58a6ff;
+}
+
+.copyright {
     text-align: center;
-    background: #05070c;
+    font-size: 12px;
+    color: #6e7681;
 }
 
-.footer-inner p {
-    color: var(--text-muted);
-    font-size: 0.85rem;
+.small {
+    font-size: 11px;
+    margin-top: 8px;
 }
 
-.small-note {
-    font-size: 0.7rem;
-    margin-top: 12px;
-    opacity: 0.6;
-}
-
-/* ---------- Адаптивность ---------- */
-@media (max-width: 780px) {
-    .hero-content {
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-top {
         flex-direction: column;
         text-align: center;
     }
-    .hero-text p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .timeline-item {
+    
+    .topic {
         flex-direction: column;
-        gap: 8px;
-        text-align: center;
-        border-left: none;
-        border-top: 4px solid var(--accent);
+        align-items: flex-start;
+        gap: 10px;
     }
-    .timeline-year {
-        font-size: 1.5rem;
-        text-align: center;
+    
+    .topic-last {
+        text-align: left;
+        padding-left: 40px;
     }
-    .tetris-mini-grid {
-        grid-template-columns: repeat(10, 20px);
-        grid-template-rows: repeat(10, 20px);
+    
+    .topic-meta {
+        gap: 10px;
     }
-    .nav-links {
-        gap: 16px;
+    
+    .forum-nav {
+        justify-content: center;
     }
-    .fact-text {
-        font-size: 1.2rem;
+    
+    .stats-bar {
+        justify-content: center;
     }
 }
