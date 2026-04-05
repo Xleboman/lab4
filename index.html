@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тетрис Форум — обсуждение легендарной игры</title>
+    <title>ForumHub - Community Discussions</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -14,292 +14,196 @@
     </script>
 </head>
 <body>
-    <div class="forum">
-        <!-- Шапка форума -->
-        <header class="forum-header">
-            <div class="container">
-                <div class="header-top">
-                    <div class="logo">
-                        <span class="logo-icon">🧩</span>
-                        <h1 class="logo-title">Tetris<span class="logo-accent">Forum</span></h1>
-                    </div>
-                    <div class="user-status">
-                        <span class="online-dot"></span>
-                        <span>Гость</span>
-                        <a href="#" class="login-link">Войти</a>
-                        <span class="sep">|</span>
-                        <a href="#" class="register-link">Регистрация</a>
-                    </div>
-                </div>
-                <nav class="forum-nav">
-                    <a href="#" class="active">Главная</a>
-                    <a href="#">Обсуждения</a>
-                    <a href="#">Стратегии</a>
-                    <a href="#">Рекорды</a>
-                    <a href="#">Турниры</a>
-                    <a href="#">Поиск</a>
-                </nav>
+    <!-- Floating Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">ForumHub</a>
+            <div class="nav-center">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#popular">Popular</a></li>
+                    <li><a href="#communities">Communities</a></li>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#create">Create Post</a></li>
+                    <li class="mobile-auth-buttons">
+                        <a href="#" class="auth-btn login-btn">Login</a>
+                        <a href="#" class="auth-btn signup-btn">Sign Up</a>
+                    </li>
+                </ul>
             </div>
-        </header>
-
-        <!-- Основной контент -->
-        <main class="forum-main container">
-            <!-- Статистика -->
-            <div class="stats-bar">
-                <span>📊 Всего тем: 247</span>
-                <span>💬 Сообщений: 1,892</span>
-                <span>👥 Пользователей: 456</span>
-                <span>🟢 Новых за сегодня: 12</span>
+            <div class="auth-buttons">
+                <a href="#" class="auth-btn login-btn">Login</a>
+                <a href="#" class="auth-btn signup-btn">Sign Up</a>
             </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </nav>
 
-            <!-- Категории и темы -->
-            <div class="categories">
-                <!-- Категория 1 -->
-                <div class="category">
-                    <div class="category-header">
-                        <h2>🎮 Общие обсуждения</h2>
-                        <span class="topic-count">45 тем</span>
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="forum-container">
+            <h1>ForumHub</h1>
+            <p class="section-info">Your community for discussions, questions, and sharing ideas</p>
+            
+            <div class="forum-content">
+                <div class="posts-container">
+                    <!-- Post 1 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">247</span>
+                            <button class="vote-btn downvote">▼</button>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/technology</span>
+                                <span class="post-author">Posted by u/tech_enthusiast • 5 hours ago</span>
+                            </div>
+                            <h3 class="post-title">New AI model can generate 3D models from text descriptions</h3>
+                            <p class="post-text">Researchers have developed a groundbreaking AI that can create detailed 3D models just from text prompts. This could revolutionize game development and virtual reality...</p>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 42 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="topic-list">
-                        <div class="topic">
-                            <div class="topic-icon">📌</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">[Закреплено] Правила форума — прочти перед созданием темы</a>
-                                <div class="topic-meta">
-                                    <span>Автор: Admin</span>
-                                    <span>Ответов: 3</span>
-                                    <span>Просмотров: 234</span>
-                                    <span>Обновлено: сегодня в 14:23</span>
-                                </div>
+
+                    <!-- Post 2 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">189</span>
+                            <button class="vote-btn downvote">▼</button>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/programming</span>
+                                <span class="post-author">Posted by u/dev_guru • 8 hours ago</span>
                             </div>
-                            <div class="topic-last">
-                                <span>Последний: Алексей</span>
+                            <h3 class="post-title">What's your favorite programming language for 2024 and why?</h3>
+                            <p class="post-text">With so many languages evolving, I'm curious what everyone is excited about. Personally, I've been loving Rust for its safety features...</p>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 127 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
                             </div>
                         </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Какой ваш любимый уровень сложности в Тетрисе?</a>
-                                <div class="topic-meta">
-                                    <span>Автор: TetrisFan</span>
-                                    <span>Ответов: 23</span>
-                                    <span>Просмотров: 567</span>
-                                    <span>Обновлено: вчера в 21:15</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: BlockMaster</span>
-                            </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">156</span>
+                            <button class="vote-btn downvote">▼</button>
                         </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Тетрис на Game Boy vs современные версии — что лучше?</a>
-                                <div class="topic-meta">
-                                    <span>Автор: RetroGamer</span>
-                                    <span>Ответов: 18</span>
-                                    <span>Просмотров: 432</span>
-                                    <span>Обновлено: 2 дня назад</span>
-                                </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/design</span>
+                                <span class="post-author">Posted by u/creative_mind • 1 day ago</span>
                             </div>
-                            <div class="topic-last">
-                                <span>Последний: PixelPusher</span>
+                            <h3 class="post-title">Showcase: Dark mode UI design system I've been working on</h3>
+                            <p class="post-text">Spent the last few months developing this comprehensive dark mode design system. Would love feedback from the community!</p>
+                            <div class="post-image">
+                                <img src="https://via.placeholder.com/600x300/333/666?text=UI+Design+Preview" alt="UI Design Preview">
                             </div>
-                        </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Кто играет в Puyo Puyo Tetris? Давайте обсудим</a>
-                                <div class="topic-meta">
-                                    <span>Автор: ComboKing</span>
-                                    <span>Ответов: 9</span>
-                                    <span>Просмотров: 198</span>
-                                    <span>Обновлено: 3 дня назад</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: SegaFan</span>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 89 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Категория 2 -->
-                <div class="category">
-                    <div class="category-header">
-                        <h2>⚡ Стратегии и советы</h2>
-                        <span class="topic-count">38 тем</span>
-                    </div>
-                    <div class="topic-list">
-                        <div class="topic">
-                            <div class="topic-icon">📌</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">[Гайд] Как делать T-Spin — полное руководство для новичков</a>
-                                <div class="topic-meta">
-                                    <span>Автор: ProPlayer</span>
-                                    <span>Ответов: 34</span>
-                                    <span>Просмотров: 1.2k</span>
-                                    <span>Обновлено: сегодня в 10:05</span>
-                                </div>
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Top Communities</h3>
+                        <div class="community-list">
+                            <div class="community-item">
+                                <span class="community-number">1</span>
+                                <span class="community-name">r/programming</span>
+                                <button class="join-btn">Join</button>
                             </div>
-                            <div class="topic-last">
-                                <span>Последний: NoobKiller</span>
+                            <div class="community-item">
+                                <span class="community-number">2</span>
+                                <span class="community-name">r/technology</span>
+                                <button class="join-btn">Join</button>
                             </div>
-                        </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Как правильно строить стенку? Делимся опытом</a>
-                                <div class="topic-meta">
-                                    <span>Автор: WallBuilder</span>
-                                    <span>Ответов: 16</span>
-                                    <span>Просмотров: 445</span>
-                                    <span>Обновлено: 2 дня назад</span>
-                                </div>
+                            <div class="community-item">
+                                <span class="community-number">3</span>
+                                <span class="community-name">r/webdev</span>
+                                <button class="join-btn">Join</button>
                             </div>
-                            <div class="topic-last">
-                                <span>Последний: TetrisGod</span>
+                            <div class="community-item">
+                                <span class="community-number">4</span>
+                                <span class="community-name">r/design</span>
+                                <button class="join-btn">Join</button>
                             </div>
-                        </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Как научиться играть на максимальной скорости?</a>
-                                <div class="topic-meta">
-                                    <span>Автор: SpeedRunner</span>
-                                    <span>Ответов: 27</span>
-                                    <span>Просмотров: 678</span>
-                                    <span>Обновлено: 5 дней назад</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: FastHands</span>
+                            <div class="community-item">
+                                <span class="community-number">5</span>
+                                <span class="community-name">r/Startups</span>
+                                <button class="join-btn">Join</button>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Категория 3 -->
-                <div class="category">
-                    <div class="category-header">
-                        <h2>🏆 Рекорды и достижения</h2>
-                        <span class="topic-count">31 тема</span>
-                    </div>
-                    <div class="topic-list">
-                        <div class="topic">
-                            <div class="topic-icon">🏆</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">[Рекорд] Прошёл 200 уровней — скриншот внутри</a>
-                                <div class="topic-meta">
-                                    <span>Автор: HighScore</span>
-                                    <span>Ответов: 42</span>
-                                    <span>Просмотров: 890</span>
-                                    <span>Обновлено: вчера в 18:30</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: Challenger</span>
-                            </div>
-                        </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Кто побьёт мой рекорд? 850,000 очков на NES Classic</a>
-                                <div class="topic-meta">
-                                    <span>Автор: RecordBreaker</span>
-                                    <span>Ответов: 15</span>
-                                    <span>Просмотров: 312</span>
-                                    <span>Обновлено: 4 дня назад</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: OldSchool</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Категория 4 -->
-                <div class="category">
-                    <div class="category-header">
-                        <h2>🔄 Турниры и соревнования</h2>
-                        <span class="topic-count">19 тем</span>
-                    </div>
-                    <div class="topic-list">
-                        <div class="topic">
-                            <div class="topic-icon">📢</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">[Анонс] Летний кубок по Тетрису — регистрация открыта!</a>
-                                <div class="topic-meta">
-                                    <span>Автор: TournamentOrg</span>
-                                    <span>Ответов: 56</span>
-                                    <span>Просмотров: 1.5k</span>
-                                    <span>Обновлено: сегодня в 09:12</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: PlayerOne</span>
-                            </div>
-                        </div>
-                        <div class="topic">
-                            <div class="topic-icon">💬</div>
-                            <div class="topic-info">
-                                <a href="#" class="topic-title">Результаты прошлого турнира — поздравляем победителя!</a>
-                                <div class="topic-meta">
-                                    <span>Автор: ModTeam</span>
-                                    <span>Ответов: 28</span>
-                                    <span>Просмотров: 567</span>
-                                    <span>Обновлено: 6 дней назад</span>
-                                </div>
-                            </div>
-                            <div class="topic-last">
-                                <span>Последний: Winner2024</span>
-                            </div>
-                        </div>
+                    <div class="sidebar-card">
+                        <h3>Create Post</h3>
+                        <p>Share your thoughts, questions, or interesting content with the community.</p>
+                        <button class="create-post-btn">Create Post</button>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Кнопка создания темы -->
-            <div class="new-topic-btn">
-                <button class="create-topic">+ Создать новую тему</button>
-            </div>
+    <!-- Popular Section -->
+    <section id="popular" class="section">
+        <div class="forum-container">
+            <h1>Popular</h1>
+            <p class="section-info">Today's most engaging discussions across all communities</p>
+        </div>
+    </section>
 
-            <!-- Онлайн пользователи -->
-            <div class="online-users">
-                <div class="online-header">
-                    <span class="online-icon">🟢</span>
-                    <h3>Сейчас на форуме</h3>
-                </div>
-                <div class="users-list">
-                    <span class="user">Admin</span>
-                    <span class="user">TetrisMaster</span>
-                    <span class="user">BlockLover</span>
-                    <span class="user">LineClearer</span>
-                    <span class="user">SpeedDemon</span>
-                    <span class="user">TetrisNoob</span>
-                    <span class="user">ProGamer</span>
-                    <span class="user">+ 15 скрытых</span>
-                </div>
-                <div class="guest-count">Гостей: 42</div>
-            </div>
-        </main>
+    <!-- Communities Section -->
+    <section id="communities" class="section">
+        <div class="forum-container">
+            <h1>Communities</h1>
+            <p class="section-info">Discover and join communities that match your interests</p>
+        </div>
+    </section>
 
-        <!-- Подвал -->
-        <footer class="forum-footer">
-            <div class="container">
-                <div class="footer-links">
-                    <a href="#">Правила</a>
-                    <a href="#">Модераторы</a>
-                    <a href="#">Связь с администрацией</a>
-                    <a href="#">Карта форума</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ForumHub</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
                 </div>
-                <div class="copyright">
-                    <p>© 2025 Tetris Forum — неофициальное сообщество фанатов Тетриса</p>
-                    <p class="small">Tetris™ принадлежит The Tetris Company. Сайт создан фанатами для фанатов.</p>
+                <div class="footer-section">
+                    <h3>Communities</h3>
+                    <a href="#popular">Popular</a>
+                    <a href="#trending">Trending</a>
+                    <a href="#new">New Communities</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
-        </footer>
-    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForumHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
