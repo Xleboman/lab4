@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForumHub - Community Discussions</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Тетрис | История и классика</title>
+  <!-- Подключаем отдельный CSS файл -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем TypeScript (будет скомпилирован в JS, но с сохранением TS-стиля) -->
+  <script src="script.js" defer></script>
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -14,196 +17,150 @@
     </script>
 </head>
 <body>
-    <!-- Floating Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">ForumHub</a>
-            <div class="nav-center">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#popular">Popular</a></li>
-                    <li><a href="#communities">Communities</a></li>
-                    <li><a href="#trending">Trending</a></li>
-                    <li><a href="#create">Create Post</a></li>
-                    <li class="mobile-auth-buttons">
-                        <a href="#" class="auth-btn login-btn">Login</a>
-                        <a href="#" class="auth-btn signup-btn">Sign Up</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="auth-buttons">
-                <a href="#" class="auth-btn login-btn">Login</a>
-                <a href="#" class="auth-btn signup-btn">Sign Up</a>
-            </div>
-            <button class="menu-toggle" id="menuToggle">☰</button>
+  <div class="page-container">
+    <!-- Шапка сайта -->
+    <header class="main-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <span class="logo-icon">🧩</span>
+          <h1 class="logo-text">TETRIS<span class="highlight">.life</span></h1>
         </div>
-    </nav>
+        <nav class="nav-links">
+          <a href="#about">О игре</a>
+          <a href="#history">История</a>
+          <a href="#figures">Фигуры</a>
+          <a href="#facts">Факты</a>
+        </nav>
+      </div>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="forum-container">
-            <h1>ForumHub</h1>
-            <p class="section-info">Your community for discussions, questions, and sharing ideas</p>
-            
-            <div class="forum-content">
-                <div class="posts-container">
-                    <!-- Post 1 -->
-                    <div class="post">
-                        <div class="post-votes">
-                            <button class="vote-btn upvote">▲</button>
-                            <span class="vote-count">247</span>
-                            <button class="vote-btn downvote">▼</button>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-header">
-                                <span class="community-badge">r/technology</span>
-                                <span class="post-author">Posted by u/tech_enthusiast • 5 hours ago</span>
-                            </div>
-                            <h3 class="post-title">New AI model can generate 3D models from text descriptions</h3>
-                            <p class="post-text">Researchers have developed a groundbreaking AI that can create detailed 3D models just from text prompts. This could revolutionize game development and virtual reality...</p>
-                            <div class="post-actions">
-                                <button class="action-btn">💬 42 Comments</button>
-                                <button class="action-btn">🔄 Share</button>
-                                <button class="action-btn">📌 Save</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post 2 -->
-                    <div class="post">
-                        <div class="post-votes">
-                            <button class="vote-btn upvote">▲</button>
-                            <span class="vote-count">189</span>
-                            <button class="vote-btn downvote">▼</button>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-header">
-                                <span class="community-badge">r/programming</span>
-                                <span class="post-author">Posted by u/dev_guru • 8 hours ago</span>
-                            </div>
-                            <h3 class="post-title">What's your favorite programming language for 2024 and why?</h3>
-                            <p class="post-text">With so many languages evolving, I'm curious what everyone is excited about. Personally, I've been loving Rust for its safety features...</p>
-                            <div class="post-actions">
-                                <button class="action-btn">💬 127 Comments</button>
-                                <button class="action-btn">🔄 Share</button>
-                                <button class="action-btn">📌 Save</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Post 3 -->
-                    <div class="post">
-                        <div class="post-votes">
-                            <button class="vote-btn upvote">▲</button>
-                            <span class="vote-count">156</span>
-                            <button class="vote-btn downvote">▼</button>
-                        </div>
-                        <div class="post-content">
-                            <div class="post-header">
-                                <span class="community-badge">r/design</span>
-                                <span class="post-author">Posted by u/creative_mind • 1 day ago</span>
-                            </div>
-                            <h3 class="post-title">Showcase: Dark mode UI design system I've been working on</h3>
-                            <p class="post-text">Spent the last few months developing this comprehensive dark mode design system. Would love feedback from the community!</p>
-                            <div class="post-image">
-                                <img src="https://via.placeholder.com/600x300/333/666?text=UI+Design+Preview" alt="UI Design Preview">
-                            </div>
-                            <div class="post-actions">
-                                <button class="action-btn">💬 89 Comments</button>
-                                <button class="action-btn">🔄 Share</button>
-                                <button class="action-btn">📌 Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar">
-                    <div class="sidebar-card">
-                        <h3>Top Communities</h3>
-                        <div class="community-list">
-                            <div class="community-item">
-                                <span class="community-number">1</span>
-                                <span class="community-name">r/programming</span>
-                                <button class="join-btn">Join</button>
-                            </div>
-                            <div class="community-item">
-                                <span class="community-number">2</span>
-                                <span class="community-name">r/technology</span>
-                                <button class="join-btn">Join</button>
-                            </div>
-                            <div class="community-item">
-                                <span class="community-number">3</span>
-                                <span class="community-name">r/webdev</span>
-                                <button class="join-btn">Join</button>
-                            </div>
-                            <div class="community-item">
-                                <span class="community-number">4</span>
-                                <span class="community-name">r/design</span>
-                                <button class="join-btn">Join</button>
-                            </div>
-                            <div class="community-item">
-                                <span class="community-number">5</span>
-                                <span class="community-name">r/Startups</span>
-                                <button class="join-btn">Join</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-card">
-                        <h3>Create Post</h3>
-                        <p>Share your thoughts, questions, or interesting content with the community.</p>
-                        <button class="create-post-btn">Create Post</button>
-                    </div>
-                </div>
-            </div>
+    <!-- Главный герой (hero) -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="hero-badge">Легендарная головоломка</span>
+          <h2>Тетрис: <br>простота, которая затягивает</h2>
+          <p>Падающие блоки, вращения, линии — и бесконечное стремление к идеальному ряду. 
+          Тетрис изменил представление об играх и остаётся актуальным десятилетиями.</p>
+          <a href="#history" class="btn-primary">Погрузиться в историю →</a>
         </div>
+        <div class="hero-preview">
+          <!-- Анимированный мини-тетрис в стиле CSS Grid (просто визуал) -->
+          <div class="tetris-mini-grid" id="tetrisMiniGrid"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Popular Section -->
-    <section id="popular" class="section">
-        <div class="forum-container">
-            <h1>Popular</h1>
-            <p class="section-info">Today's most engaging discussions across all communities</p>
+    <!-- Раздел: О игре -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Суть</span>
+          <h2>Что такое Тетрис?</h2>
+          <div class="divider"></div>
         </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="card-icon">🎮</div>
+            <h3>Геймплей</h3>
+            <p>Семь различных фигур (тетрамино) падают сверху. Игрок перемещает и вращает их, 
+            чтобы заполнить горизонтальные линии. Заполненная линия исчезает, освобождая место, 
+            а темп игры ускоряется.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">🧠</div>
+            <h3>Стратегия</h3>
+            <p>Тетрис тренирует пространственное мышление, реакцию и планирование. 
+            Опытные игроки продумывают расположение блоков на несколько шагов вперёд.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">🏆</div>
+            <h3>Рекорды</h3>
+            <p>Классический тетрис на NES побил рекорд: максимальный уровень 237 и более 29 миллионов очков. 
+            Профессиональные киберспортивные турниры проводятся до сих пор.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Communities Section -->
-    <section id="communities" class="section">
-        <div class="forum-container">
-            <h1>Communities</h1>
-            <p class="section-info">Discover and join communities that match your interests</p>
+    <!-- Раздел: История Тетриса -->
+    <section id="history" class="section history-section">
+      <div class="container">
+        <div class="section-header light-header">
+          <span class="section-tag dark-tag">Рождение легенды</span>
+          <h2>История создания</h2>
+          <div class="divider light-divider"></div>
         </div>
+        <div class="history-timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1984</div>
+            <div class="timeline-content">
+              <h3>Советский союз, Москва</h3>
+              <p>Алексей Пажитнов, программист Вычислительного центра АН СССР, создаёт Тетрис на компьютере «Электроника-60». 
+              Название происходит от греческого «тетра» (четыре) и тенниса — любимой игры Алексея.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1988</div>
+            <div class="timeline-content">
+              <h3>Мировой бум</h3>
+              <p>Игра распространяется по всему миру через копии и пиратские версии. Nintendo получает права на консоль Game Boy, 
+              и Тетрис становится флагманской игрой портативной консоли.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1990–2020</div>
+            <div class="timeline-content">
+              <h3>Культовый статус</h3>
+              <p>Тетрис входит в Зал славы видеоигр, выпускается на всех платформах: от мобильных телефонов до VR. 
+              Исследования доказывают, что игра помогает снижать стресс и улучшать когнитивные способности.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ForumHub</h3>
-                    <a href="#about">About Us</a>
-                    <a href="#careers">Careers</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Communities</h3>
-                    <a href="#popular">Popular</a>
-                    <a href="#trending">Trending</a>
-                    <a href="#new">New Communities</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <a href="#">Help Center</a>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 ForumHub. All rights reserved.</p>
-            </div>
+    <!-- Раздел: Фигуры (Тетрамино) -->
+    <section id="figures" class="section figures-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">7 элементов</span>
+          <h2>Тетрамино — кирпичики игры</h2>
+          <div class="divider"></div>
         </div>
+        <div class="figures-gallery" id="figuresGallery">
+          <!-- Здесь с помощью JS будут динамически созданы карточки фигур -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Раздел: Интересные факты -->
+    <section id="facts" class="section facts-section">
+      <div class="container">
+        <div class="section-header light-header">
+          <span class="section-tag dark-tag">А знаете ли вы?</span>
+          <h2>Удивительные факты о Тетрисе</h2>
+          <div class="divider light-divider"></div>
+        </div>
+        <div class="facts-slider" id="factsSlider">
+          <!-- Факты будут подгружены через TS -->
+        </div>
+        <div class="fact-controls">
+          <button class="fact-btn prev-fact" id="prevFactBtn">← Предыдущий</button>
+          <span class="fact-counter" id="factCounter">1 / 5</span>
+          <button class="fact-btn next-fact" id="nextFactBtn">Следующий →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="main-footer">
+      <div class="container footer-inner">
+        <p>© 2025 TETRIS tribute site | Создано с любовью к классике</p>
+        <p class="small-note">Тетрис™ — зарегистрированная торговая марка The Tetris Company.</p>
+      </div>
     </footer>
-
-    <script src="script.js"></script>
+  </div>
 </body>
+</html>
 </html>
