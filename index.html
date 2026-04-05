@@ -1,14 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Тетрис | История и классика</title>
-  <!-- Подключаем отдельный CSS файл -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Подключаем TypeScript (будет скомпилирован в JS, но с сохранением TS-стиля) -->
-  <script src="script.js" defer></script>
-    <script type="text/javascript">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="История, факты и всё о легендарной игре Тетрис">
+    <title>Тетрис | История легендарной головоломки</title>
+    <!-- Подключаем отдельный CSS файл -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем TypeScript (скомпилированный в JavaScript) -->
+    <script src="script.js" defer></script>
+  <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -17,150 +19,146 @@
     </script>
 </head>
 <body>
-  <div class="page-container">
-    <!-- Шапка сайта -->
-    <header class="main-header">
-      <div class="container header-flex">
-        <div class="logo">
-          <span class="logo-icon">🧩</span>
-          <h1 class="logo-text">TETRIS<span class="highlight">.life</span></h1>
-        </div>
-        <nav class="nav-links">
-          <a href="#about">О игре</a>
-          <a href="#history">История</a>
-          <a href="#figures">Фигуры</a>
-          <a href="#facts">Факты</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Главный герой (hero) -->
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <span class="hero-badge">Легендарная головоломка</span>
-          <h2>Тетрис: <br>простота, которая затягивает</h2>
-          <p>Падающие блоки, вращения, линии — и бесконечное стремление к идеальному ряду. 
-          Тетрис изменил представление об играх и остаётся актуальным десятилетиями.</p>
-          <a href="#history" class="btn-primary">Погрузиться в историю →</a>
-        </div>
-        <div class="hero-preview">
-          <!-- Анимированный мини-тетрис в стиле CSS Grid (просто визуал) -->
-          <div class="tetris-mini-grid" id="tetrisMiniGrid"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел: О игре -->
-    <section id="about" class="section about-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Суть</span>
-          <h2>Что такое Тетрис?</h2>
-          <div class="divider"></div>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <div class="card-icon">🎮</div>
-            <h3>Геймплей</h3>
-            <p>Семь различных фигур (тетрамино) падают сверху. Игрок перемещает и вращает их, 
-            чтобы заполнить горизонтальные линии. Заполненная линия исчезает, освобождая место, 
-            а темп игры ускоряется.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon">🧠</div>
-            <h3>Стратегия</h3>
-            <p>Тетрис тренирует пространственное мышление, реакцию и планирование. 
-            Опытные игроки продумывают расположение блоков на несколько шагов вперёд.</p>
-          </div>
-          <div class="about-card">
-            <div class="card-icon">🏆</div>
-            <h3>Рекорды</h3>
-            <p>Классический тетрис на NES побил рекорд: максимальный уровень 237 и более 29 миллионов очков. 
-            Профессиональные киберспортивные турниры проводятся до сих пор.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел: История Тетриса -->
-    <section id="history" class="section history-section">
-      <div class="container">
-        <div class="section-header light-header">
-          <span class="section-tag dark-tag">Рождение легенды</span>
-          <h2>История создания</h2>
-          <div class="divider light-divider"></div>
-        </div>
-        <div class="history-timeline">
-          <div class="timeline-item">
-            <div class="timeline-year">1984</div>
-            <div class="timeline-content">
-              <h3>Советский союз, Москва</h3>
-              <p>Алексей Пажитнов, программист Вычислительного центра АН СССР, создаёт Тетрис на компьютере «Электроника-60». 
-              Название происходит от греческого «тетра» (четыре) и тенниса — любимой игры Алексея.</p>
+    <div class="page-wrapper">
+        <!-- Шапка сайта с навигацией -->
+        <header class="header" id="header">
+            <div class="container header__container">
+                <div class="logo">
+                    <div class="logo__icon">🧩</div>
+                    <div class="logo__text">TETRIS<span class="logo__accent">.life</span></div>
+                </div>
+                <nav class="nav">
+                    <button class="nav__toggle" id="navToggle" aria-label="Меню">☰</button>
+                    <ul class="nav__list" id="navList">
+                        <li class="nav__item"><a href="#about" class="nav__link">О игре</a></li>
+                        <li class="nav__item"><a href="#history" class="nav__link">История</a></li>
+                        <li class="nav__item"><a href="#figures" class="nav__link">Фигуры</a></li>
+                        <li class="nav__item"><a href="#facts" class="nav__link">Факты</a></li>
+                    </ul>
+                </nav>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">1988</div>
-            <div class="timeline-content">
-              <h3>Мировой бум</h3>
-              <p>Игра распространяется по всему миру через копии и пиратские версии. Nintendo получает права на консоль Game Boy, 
-              и Тетрис становится флагманской игрой портативной консоли.</p>
+        </header>
+
+        <main>
+            <!-- Hero секция -->
+            <section class="hero">
+                <div class="container hero__container">
+                    <div class="hero__content">
+                        <span class="hero__badge">🎮 Легендарная головоломка</span>
+                        <h1 class="hero__title">Тетрис: <br>простота, которая затягивает</h1>
+                        <p class="hero__description">Падающие блоки, вращения, линии — и бесконечное стремление к идеальному ряду. Тетрис изменил представление об играх и остаётся актуальным десятилетиями.</p>
+                        <a href="#history" class="btn btn--primary">Погрузиться в историю →</a>
+                    </div>
+                    <div class="hero__visual">
+                        <div class="tetris-preview" id="tetrisPreview"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция "О игре" -->
+            <section id="about" class="section about">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__tag">Суть игры</span>
+                        <h2 class="section__title">Что такое Тетрис?</h2>
+                        <div class="section__divider"></div>
+                    </div>
+                    <div class="about__grid">
+                        <article class="about__card">
+                            <div class="about__card-icon">🎮</div>
+                            <h3 class="about__card-title">Геймплей</h3>
+                            <p class="about__card-text">Семь различных фигур (тетрамино) падают сверху. Игрок перемещает и вращает их, чтобы заполнить горизонтальные линии. Заполненная линия исчезает, освобождая место, а темп игры ускоряется.</p>
+                        </article>
+                        <article class="about__card">
+                            <div class="about__card-icon">🧠</div>
+                            <h3 class="about__card-title">Стратегия</h3>
+                            <p class="about__card-text">Тетрис тренирует пространственное мышление, реакцию и планирование. Опытные игроки продумывают расположение блоков на несколько шагов вперёд.</p>
+                        </article>
+                        <article class="about__card">
+                            <div class="about__card-icon">🏆</div>
+                            <h3 class="about__card-title">Рекорды</h3>
+                            <p class="about__card-text">Классический тетрис на NES побил рекорд: максимальный уровень 237 и более 29 миллионов очков. Профессиональные киберспортивные турниры проводятся до сих пор.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция "История" -->
+            <section id="history" class="section history">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__tag section__tag--gold">Рождение легенды</span>
+                        <h2 class="section__title">История создания</h2>
+                        <div class="section__divider section__divider--gold"></div>
+                    </div>
+                    <div class="history__timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__year">1984</div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Советский союз, Москва</h3>
+                                <p class="timeline__text">Алексей Пажитнов, программист Вычислительного центра АН СССР, создаёт Тетрис на компьютере «Электроника-60». Название происходит от греческого «тетра» (четыре) и тенниса — любимой игры Алексея.</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__year">1988</div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Мировой бум</h3>
+                                <p class="timeline__text">Игра распространяется по всему миру через копии и пиратские версии. Nintendo получает права на консоль Game Boy, и Тетрис становится флагманской игрой портативной консоли.</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__year">1990–2020</div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Культовый статус</h3>
+                                <p class="timeline__text">Тетрис входит в Зал славы видеоигр, выпускается на всех платформах: от мобильных телефонов до VR. Исследования доказывают, что игра помогает снижать стресс и улучшать когнитивные способности.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция "Фигуры" -->
+            <section id="figures" class="section figures">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__tag">7 элементов</span>
+                        <h2 class="section__title">Тетрамино — кирпичики игры</h2>
+                        <div class="section__divider"></div>
+                    </div>
+                    <div class="figures__grid" id="figuresGrid"></div>
+                </div>
+            </section>
+
+            <!-- Секция "Факты" -->
+            <section id="facts" class="section facts">
+                <div class="container">
+                    <div class="section__header">
+                        <span class="section__tag section__tag--gold">А знаете ли вы?</span>
+                        <h2 class="section__title">Удивительные факты о Тетрисе</h2>
+                        <div class="section__divider section__divider--gold"></div>
+                    </div>
+                    <div class="facts__slider">
+                        <div class="facts__content" id="factsContent">
+                            <p class="facts__text" id="factsText">Загрузка фактов...</p>
+                            <span class="facts__source" id="factsSource"></span>
+                        </div>
+                        <div class="facts__controls">
+                            <button class="facts__btn facts__btn--prev" id="prevFactBtn">← Предыдущий</button>
+                            <span class="facts__counter" id="factsCounter">1 / 5</span>
+                            <button class="facts__btn facts__btn--next" id="nextFactBtn">Следующий →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="footer">
+            <div class="container footer__container">
+                <p>© 2025 TETRIS tribute site | Создано с любовью к классике</p>
+                <p class="footer__note">Тетрис™ — зарегистрированная торговая марка The Tetris Company.</p>
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">1990–2020</div>
-            <div class="timeline-content">
-              <h3>Культовый статус</h3>
-              <p>Тетрис входит в Зал славы видеоигр, выпускается на всех платформах: от мобильных телефонов до VR. 
-              Исследования доказывают, что игра помогает снижать стресс и улучшать когнитивные способности.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел: Фигуры (Тетрамино) -->
-    <section id="figures" class="section figures-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">7 элементов</span>
-          <h2>Тетрамино — кирпичики игры</h2>
-          <div class="divider"></div>
-        </div>
-        <div class="figures-gallery" id="figuresGallery">
-          <!-- Здесь с помощью JS будут динамически созданы карточки фигур -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел: Интересные факты -->
-    <section id="facts" class="section facts-section">
-      <div class="container">
-        <div class="section-header light-header">
-          <span class="section-tag dark-tag">А знаете ли вы?</span>
-          <h2>Удивительные факты о Тетрисе</h2>
-          <div class="divider light-divider"></div>
-        </div>
-        <div class="facts-slider" id="factsSlider">
-          <!-- Факты будут подгружены через TS -->
-        </div>
-        <div class="fact-controls">
-          <button class="fact-btn prev-fact" id="prevFactBtn">← Предыдущий</button>
-          <span class="fact-counter" id="factCounter">1 / 5</span>
-          <button class="fact-btn next-fact" id="nextFactBtn">Следующий →</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Футер -->
-    <footer class="main-footer">
-      <div class="container footer-inner">
-        <p>© 2025 TETRIS tribute site | Создано с любовью к классике</p>
-        <p class="small-note">Тетрис™ — зарегистрированная торговая марка The Tetris Company.</p>
-      </div>
-    </footer>
-  </div>
+        </footer>
+    </div>
 </body>
-</html>
 </html>
