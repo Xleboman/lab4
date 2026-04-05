@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForumHub - Community Discussions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://t.contentsquare.net/uxa/d90051b93f71b.js"></script>
+</script>
+</script>
+</head>
+<body>
+    <!-- Floating Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">ForumHub</a>
+            <div class="nav-center">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#popular">Popular</a></li>
+                    <li><a href="#communities">Communities</a></li>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#create">Create Post</a></li>
+                    <li class="mobile-auth-buttons">
+                        <a href="#" class="auth-btn login-btn">Login</a>
+                        <a href="#" class="auth-btn signup-btn">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="auth-buttons">
+                <a href="#" class="auth-btn login-btn">Login</a>
+                <a href="#" class="auth-btn signup-btn">Sign Up</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="forum-container">
+            <h1>ForumHub</h1>
+            <p class="section-info">Your community for discussions, questions, and sharing ideas</p>
+            
+            <div class="forum-content">
+                <div class="posts-container">
+                    <!-- Post 1 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">247</span>
+                            <button class="vote-btn downvote">▼</button>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/technology</span>
+                                <span class="post-author">Posted by u/tech_enthusiast • 5 hours ago</span>
+                            </div>
+                            <h3 class="post-title">New AI model can generate 3D models from text descriptions</h3>
+                            <p class="post-text">Researchers have developed a groundbreaking AI that can create detailed 3D models just from text prompts. This could revolutionize game development and virtual reality...</p>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 42 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">189</span>
+                            <button class="vote-btn downvote">▼</button>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/programming</span>
+                                <span class="post-author">Posted by u/dev_guru • 8 hours ago</span>
+                            </div>
+                            <h3 class="post-title">What's your favorite programming language for 2024 and why?</h3>
+                            <p class="post-text">With so many languages evolving, I'm curious what everyone is excited about. Personally, I've been loving Rust for its safety features...</p>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 127 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="post">
+                        <div class="post-votes">
+                            <button class="vote-btn upvote">▲</button>
+                            <span class="vote-count">156</span>
+                            <button class="vote-btn downvote">▼</button>
+                        </div>
+                        <div class="post-content">
+                            <div class="post-header">
+                                <span class="community-badge">r/design</span>
+                                <span class="post-author">Posted by u/creative_mind • 1 day ago</span>
+                            </div>
+                            <h3 class="post-title">Showcase: Dark mode UI design system I've been working on</h3>
+                            <p class="post-text">Spent the last few months developing this comprehensive dark mode design system. Would love feedback from the community!</p>
+                            <div class="post-image">
+                                <img src="https://via.placeholder.com/600x300/333/666?text=UI+Design+Preview" alt="UI Design Preview">
+                            </div>
+                            <div class="post-actions">
+                                <button class="action-btn">💬 89 Comments</button>
+                                <button class="action-btn">🔄 Share</button>
+                                <button class="action-btn">📌 Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Top Communities</h3>
+                        <div class="community-list">
+                            <div class="community-item">
+                                <span class="community-number">1</span>
+                                <span class="community-name">r/programming</span>
+                                <button class="join-btn">Join</button>
+                            </div>
+                            <div class="community-item">
+                                <span class="community-number">2</span>
+                                <span class="community-name">r/technology</span>
+                                <button class="join-btn">Join</button>
+                            </div>
+                            <div class="community-item">
+                                <span class="community-number">3</span>
+                                <span class="community-name">r/webdev</span>
+                                <button class="join-btn">Join</button>
+                            </div>
+                            <div class="community-item">
+                                <span class="community-number">4</span>
+                                <span class="community-name">r/design</span>
+                                <button class="join-btn">Join</button>
+                            </div>
+                            <div class="community-item">
+                                <span class="community-number">5</span>
+                                <span class="community-name">r/Startups</span>
+                                <button class="join-btn">Join</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Create Post</h3>
+                        <p>Share your thoughts, questions, or interesting content with the community.</p>
+                        <button class="create-post-btn">Create Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Section -->
+    <section id="popular" class="section">
+        <div class="forum-container">
+            <h1>Popular</h1>
+            <p class="section-info">Today's most engaging discussions across all communities</p>
+        </div>
+    </section>
+
+    <!-- Communities Section -->
+    <section id="communities" class="section">
+        <div class="forum-container">
+            <h1>Communities</h1>
+            <p class="section-info">Discover and join communities that match your interests</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ForumHub</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Communities</h3>
+                    <a href="#popular">Popular</a>
+                    <a href="#trending">Trending</a>
+                    <a href="#new">New Communities</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ForumHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
