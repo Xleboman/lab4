@@ -1,16 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="История, факты и всё о легендарной игре Тетрис">
-    <title>Тетрис | История легендарной головоломки</title>
-    <!-- Подключаем отдельный CSS файл -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тетрис Форум — обсуждение легендарной игры</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем TypeScript (скомпилированный в JavaScript) -->
-    <script src="script.js" defer></script>
-  <script type="text/javascript">
+    <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -19,144 +14,290 @@
     </script>
 </head>
 <body>
-    <div class="page-wrapper">
-        <!-- Шапка сайта с навигацией -->
-        <header class="header" id="header">
-            <div class="container header__container">
-                <div class="logo">
-                    <div class="logo__icon">🧩</div>
-                    <div class="logo__text">TETRIS<span class="logo__accent">.life</span></div>
+    <div class="forum">
+        <!-- Шапка форума -->
+        <header class="forum-header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo">
+                        <span class="logo-icon">🧩</span>
+                        <h1 class="logo-title">Tetris<span class="logo-accent">Forum</span></h1>
+                    </div>
+                    <div class="user-status">
+                        <span class="online-dot"></span>
+                        <span>Гость</span>
+                        <a href="#" class="login-link">Войти</a>
+                        <span class="sep">|</span>
+                        <a href="#" class="register-link">Регистрация</a>
+                    </div>
                 </div>
-                <nav class="nav">
-                    <button class="nav__toggle" id="navToggle" aria-label="Меню">☰</button>
-                    <ul class="nav__list" id="navList">
-                        <li class="nav__item"><a href="#about" class="nav__link">О игре</a></li>
-                        <li class="nav__item"><a href="#history" class="nav__link">История</a></li>
-                        <li class="nav__item"><a href="#figures" class="nav__link">Фигуры</a></li>
-                        <li class="nav__item"><a href="#facts" class="nav__link">Факты</a></li>
-                    </ul>
+                <nav class="forum-nav">
+                    <a href="#" class="active">Главная</a>
+                    <a href="#">Обсуждения</a>
+                    <a href="#">Стратегии</a>
+                    <a href="#">Рекорды</a>
+                    <a href="#">Турниры</a>
+                    <a href="#">Поиск</a>
                 </nav>
             </div>
         </header>
 
-        <main>
-            <!-- Hero секция -->
-            <section class="hero">
-                <div class="container hero__container">
-                    <div class="hero__content">
-                        <span class="hero__badge">🎮 Легендарная головоломка</span>
-                        <h1 class="hero__title">Тетрис: <br>простота, которая затягивает</h1>
-                        <p class="hero__description">Падающие блоки, вращения, линии — и бесконечное стремление к идеальному ряду. Тетрис изменил представление об играх и остаётся актуальным десятилетиями.</p>
-                        <a href="#history" class="btn btn--primary">Погрузиться в историю →</a>
-                    </div>
-                    <div class="hero__visual">
-                        <div class="tetris-preview" id="tetrisPreview"></div>
-                    </div>
-                </div>
-            </section>
+        <!-- Основной контент -->
+        <main class="forum-main container">
+            <!-- Статистика -->
+            <div class="stats-bar">
+                <span>📊 Всего тем: 247</span>
+                <span>💬 Сообщений: 1,892</span>
+                <span>👥 Пользователей: 456</span>
+                <span>🟢 Новых за сегодня: 12</span>
+            </div>
 
-            <!-- Секция "О игре" -->
-            <section id="about" class="section about">
-                <div class="container">
-                    <div class="section__header">
-                        <span class="section__tag">Суть игры</span>
-                        <h2 class="section__title">Что такое Тетрис?</h2>
-                        <div class="section__divider"></div>
+            <!-- Категории и темы -->
+            <div class="categories">
+                <!-- Категория 1 -->
+                <div class="category">
+                    <div class="category-header">
+                        <h2>🎮 Общие обсуждения</h2>
+                        <span class="topic-count">45 тем</span>
                     </div>
-                    <div class="about__grid">
-                        <article class="about__card">
-                            <div class="about__card-icon">🎮</div>
-                            <h3 class="about__card-title">Геймплей</h3>
-                            <p class="about__card-text">Семь различных фигур (тетрамино) падают сверху. Игрок перемещает и вращает их, чтобы заполнить горизонтальные линии. Заполненная линия исчезает, освобождая место, а темп игры ускоряется.</p>
-                        </article>
-                        <article class="about__card">
-                            <div class="about__card-icon">🧠</div>
-                            <h3 class="about__card-title">Стратегия</h3>
-                            <p class="about__card-text">Тетрис тренирует пространственное мышление, реакцию и планирование. Опытные игроки продумывают расположение блоков на несколько шагов вперёд.</p>
-                        </article>
-                        <article class="about__card">
-                            <div class="about__card-icon">🏆</div>
-                            <h3 class="about__card-title">Рекорды</h3>
-                            <p class="about__card-text">Классический тетрис на NES побил рекорд: максимальный уровень 237 и более 29 миллионов очков. Профессиональные киберспортивные турниры проводятся до сих пор.</p>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Секция "История" -->
-            <section id="history" class="section history">
-                <div class="container">
-                    <div class="section__header">
-                        <span class="section__tag section__tag--gold">Рождение легенды</span>
-                        <h2 class="section__title">История создания</h2>
-                        <div class="section__divider section__divider--gold"></div>
-                    </div>
-                    <div class="history__timeline">
-                        <div class="timeline__item">
-                            <div class="timeline__year">1984</div>
-                            <div class="timeline__content">
-                                <h3 class="timeline__title">Советский союз, Москва</h3>
-                                <p class="timeline__text">Алексей Пажитнов, программист Вычислительного центра АН СССР, создаёт Тетрис на компьютере «Электроника-60». Название происходит от греческого «тетра» (четыре) и тенниса — любимой игры Алексея.</p>
+                    <div class="topic-list">
+                        <div class="topic">
+                            <div class="topic-icon">📌</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">[Закреплено] Правила форума — прочти перед созданием темы</a>
+                                <div class="topic-meta">
+                                    <span>Автор: Admin</span>
+                                    <span>Ответов: 3</span>
+                                    <span>Просмотров: 234</span>
+                                    <span>Обновлено: сегодня в 14:23</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: Алексей</span>
                             </div>
                         </div>
-                        <div class="timeline__item">
-                            <div class="timeline__year">1988</div>
-                            <div class="timeline__content">
-                                <h3 class="timeline__title">Мировой бум</h3>
-                                <p class="timeline__text">Игра распространяется по всему миру через копии и пиратские версии. Nintendo получает права на консоль Game Boy, и Тетрис становится флагманской игрой портативной консоли.</p>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Какой ваш любимый уровень сложности в Тетрисе?</a>
+                                <div class="topic-meta">
+                                    <span>Автор: TetrisFan</span>
+                                    <span>Ответов: 23</span>
+                                    <span>Просмотров: 567</span>
+                                    <span>Обновлено: вчера в 21:15</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: BlockMaster</span>
                             </div>
                         </div>
-                        <div class="timeline__item">
-                            <div class="timeline__year">1990–2020</div>
-                            <div class="timeline__content">
-                                <h3 class="timeline__title">Культовый статус</h3>
-                                <p class="timeline__text">Тетрис входит в Зал славы видеоигр, выпускается на всех платформах: от мобильных телефонов до VR. Исследования доказывают, что игра помогает снижать стресс и улучшать когнитивные способности.</p>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Тетрис на Game Boy vs современные версии — что лучше?</a>
+                                <div class="topic-meta">
+                                    <span>Автор: RetroGamer</span>
+                                    <span>Ответов: 18</span>
+                                    <span>Просмотров: 432</span>
+                                    <span>Обновлено: 2 дня назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: PixelPusher</span>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Кто играет в Puyo Puyo Tetris? Давайте обсудим</a>
+                                <div class="topic-meta">
+                                    <span>Автор: ComboKing</span>
+                                    <span>Ответов: 9</span>
+                                    <span>Просмотров: 198</span>
+                                    <span>Обновлено: 3 дня назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: SegaFan</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
 
-            <!-- Секция "Фигуры" -->
-            <section id="figures" class="section figures">
-                <div class="container">
-                    <div class="section__header">
-                        <span class="section__tag">7 элементов</span>
-                        <h2 class="section__title">Тетрамино — кирпичики игры</h2>
-                        <div class="section__divider"></div>
+                <!-- Категория 2 -->
+                <div class="category">
+                    <div class="category-header">
+                        <h2>⚡ Стратегии и советы</h2>
+                        <span class="topic-count">38 тем</span>
                     </div>
-                    <div class="figures__grid" id="figuresGrid"></div>
+                    <div class="topic-list">
+                        <div class="topic">
+                            <div class="topic-icon">📌</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">[Гайд] Как делать T-Spin — полное руководство для новичков</a>
+                                <div class="topic-meta">
+                                    <span>Автор: ProPlayer</span>
+                                    <span>Ответов: 34</span>
+                                    <span>Просмотров: 1.2k</span>
+                                    <span>Обновлено: сегодня в 10:05</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: NoobKiller</span>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Как правильно строить стенку? Делимся опытом</a>
+                                <div class="topic-meta">
+                                    <span>Автор: WallBuilder</span>
+                                    <span>Ответов: 16</span>
+                                    <span>Просмотров: 445</span>
+                                    <span>Обновлено: 2 дня назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: TetrisGod</span>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Как научиться играть на максимальной скорости?</a>
+                                <div class="topic-meta">
+                                    <span>Автор: SpeedRunner</span>
+                                    <span>Ответов: 27</span>
+                                    <span>Просмотров: 678</span>
+                                    <span>Обновлено: 5 дней назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: FastHands</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
 
-            <!-- Секция "Факты" -->
-            <section id="facts" class="section facts">
-                <div class="container">
-                    <div class="section__header">
-                        <span class="section__tag section__tag--gold">А знаете ли вы?</span>
-                        <h2 class="section__title">Удивительные факты о Тетрисе</h2>
-                        <div class="section__divider section__divider--gold"></div>
+                <!-- Категория 3 -->
+                <div class="category">
+                    <div class="category-header">
+                        <h2>🏆 Рекорды и достижения</h2>
+                        <span class="topic-count">31 тема</span>
                     </div>
-                    <div class="facts__slider">
-                        <div class="facts__content" id="factsContent">
-                            <p class="facts__text" id="factsText">Загрузка фактов...</p>
-                            <span class="facts__source" id="factsSource"></span>
+                    <div class="topic-list">
+                        <div class="topic">
+                            <div class="topic-icon">🏆</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">[Рекорд] Прошёл 200 уровней — скриншот внутри</a>
+                                <div class="topic-meta">
+                                    <span>Автор: HighScore</span>
+                                    <span>Ответов: 42</span>
+                                    <span>Просмотров: 890</span>
+                                    <span>Обновлено: вчера в 18:30</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: Challenger</span>
+                            </div>
                         </div>
-                        <div class="facts__controls">
-                            <button class="facts__btn facts__btn--prev" id="prevFactBtn">← Предыдущий</button>
-                            <span class="facts__counter" id="factsCounter">1 / 5</span>
-                            <button class="facts__btn facts__btn--next" id="nextFactBtn">Следующий →</button>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Кто побьёт мой рекорд? 850,000 очков на NES Classic</a>
+                                <div class="topic-meta">
+                                    <span>Автор: RecordBreaker</span>
+                                    <span>Ответов: 15</span>
+                                    <span>Просмотров: 312</span>
+                                    <span>Обновлено: 4 дня назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: OldSchool</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+
+                <!-- Категория 4 -->
+                <div class="category">
+                    <div class="category-header">
+                        <h2>🔄 Турниры и соревнования</h2>
+                        <span class="topic-count">19 тем</span>
+                    </div>
+                    <div class="topic-list">
+                        <div class="topic">
+                            <div class="topic-icon">📢</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">[Анонс] Летний кубок по Тетрису — регистрация открыта!</a>
+                                <div class="topic-meta">
+                                    <span>Автор: TournamentOrg</span>
+                                    <span>Ответов: 56</span>
+                                    <span>Просмотров: 1.5k</span>
+                                    <span>Обновлено: сегодня в 09:12</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: PlayerOne</span>
+                            </div>
+                        </div>
+                        <div class="topic">
+                            <div class="topic-icon">💬</div>
+                            <div class="topic-info">
+                                <a href="#" class="topic-title">Результаты прошлого турнира — поздравляем победителя!</a>
+                                <div class="topic-meta">
+                                    <span>Автор: ModTeam</span>
+                                    <span>Ответов: 28</span>
+                                    <span>Просмотров: 567</span>
+                                    <span>Обновлено: 6 дней назад</span>
+                                </div>
+                            </div>
+                            <div class="topic-last">
+                                <span>Последний: Winner2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Кнопка создания темы -->
+            <div class="new-topic-btn">
+                <button class="create-topic">+ Создать новую тему</button>
+            </div>
+
+            <!-- Онлайн пользователи -->
+            <div class="online-users">
+                <div class="online-header">
+                    <span class="online-icon">🟢</span>
+                    <h3>Сейчас на форуме</h3>
+                </div>
+                <div class="users-list">
+                    <span class="user">Admin</span>
+                    <span class="user">TetrisMaster</span>
+                    <span class="user">BlockLover</span>
+                    <span class="user">LineClearer</span>
+                    <span class="user">SpeedDemon</span>
+                    <span class="user">TetrisNoob</span>
+                    <span class="user">ProGamer</span>
+                    <span class="user">+ 15 скрытых</span>
+                </div>
+                <div class="guest-count">Гостей: 42</div>
+            </div>
         </main>
 
         <!-- Подвал -->
-        <footer class="footer">
-            <div class="container footer__container">
-                <p>© 2025 TETRIS tribute site | Создано с любовью к классике</p>
-                <p class="footer__note">Тетрис™ — зарегистрированная торговая марка The Tetris Company.</p>
+        <footer class="forum-footer">
+            <div class="container">
+                <div class="footer-links">
+                    <a href="#">Правила</a>
+                    <a href="#">Модераторы</a>
+                    <a href="#">Связь с администрацией</a>
+                    <a href="#">Карта форума</a>
+                </div>
+                <div class="copyright">
+                    <p>© 2025 Tetris Forum — неофициальное сообщество фанатов Тетриса</p>
+                    <p class="small">Tetris™ принадлежит The Tetris Company. Сайт создан фанатами для фанатов.</p>
+                </div>
             </div>
         </footer>
     </div>
